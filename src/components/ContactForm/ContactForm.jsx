@@ -32,7 +32,9 @@ export function ContactForm() {
     if (nameExists) {
       alert(`${form.elements.name.value} is already in contacts`);
     } else {
-      dispatch(addContact(form.elements.name.value, form.elements.tel.value));
+
+console.log(form.elements.name.value, form.elements.number.value );
+      dispatch(addContact({ name:form.elements.name.value, number:form.elements.number.value }));
     }
 
     form.reset();
@@ -58,7 +60,7 @@ export function ContactForm() {
             <Field
               className={css.field}
               type="number"
-              name="tel"
+              name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               // value={number}
