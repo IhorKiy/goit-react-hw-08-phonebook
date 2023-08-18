@@ -32,8 +32,6 @@ export function ContactForm() {
     if (nameExists) {
       alert(`${form.elements.name.value} is already in contacts`);
     } else {
-
-console.log(form.elements.name.value, form.elements.number.value );
       dispatch(addContact({ name:form.elements.name.value, number:form.elements.number.value }));
     }
 
