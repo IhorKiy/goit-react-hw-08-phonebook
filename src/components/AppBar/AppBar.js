@@ -1,6 +1,6 @@
 import { Navigation } from '../Navigation/Navigation';
 import { UserMenu } from '../UserMenu/UserMenu';
-import  authNav  from "../AuthNav/AuthNav";
+import  AuthNav  from "../AuthNav/AuthNav";
 import { useAuth } from 'hooks';
 import css from "./appBar.module.css";
 
@@ -10,7 +10,7 @@ export const AppBar = () => {
   return (
     <header className={css.header}>
       <Navigation />
-      {isLoggedIn ? <UserMenu /> : <authNav />}
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
   );
 };
